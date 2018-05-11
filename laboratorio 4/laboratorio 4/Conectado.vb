@@ -13,7 +13,7 @@ Public Class Conectado
     Private Sub cargarConectado()
 
 
-        connection.ConnectionString = "Data Source=.;Initial Catalog=DatosPersona;Integrated Security=true"
+        connection.ConnectionString = My.Settings.conn
         Dim sentencias As New SqlCommand("", connection)
 
         Dim fileReader As StreamReader
