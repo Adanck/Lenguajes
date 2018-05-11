@@ -4,17 +4,18 @@ Imports System.IO
 Public Class Conectado
 
 
-    Dim connection As New SqlConnection
-    Dim tblDatosPersonas As New DataTable
-    Dim strNombre As String
-    Dim strApellido1 As String
-    Dim strApellido2 As String
+    Private connection As New SqlConnection
+    Private tblDatosPersonas As New DataTable
+    Private strNombre As String
+    Private strApellido1 As String
+    Private strApellido2 As String
 
     Private Sub cargarConectado()
 
+        Dim cadena As String = My.Settings.MyConnectio
+        connection.ConnectionString = cadena
 
-        connection.ConnectionString = "Data Source=.;Initial Catalog=DatosPersona;Integrated Security=true"
-        Dim sentencias As New SqlCommand("", connection)
+
 
         Dim fileReader As StreamReader
         Dim line As String
@@ -42,9 +43,26 @@ Public Class Conectado
                 connection.Open()
             End If
             tblDatosPersonas.Rows.Add(strNombre, strApellido1, strApellido2)
-
             line = fileReader.ReadLine
         Loop
+
+
+        For Each row In tblDatosPersonas.Rows
+            Dim column As DataColumn
+            For Each column In tblDatosPersonas.Columns
+                Console.WriteLine(row(column))
+                Dim sentencias As New SqlCommand("Insert into Nombres(Nombre, Apellido1, Apellido2) values(@nom, @ape1, @ape2)", connection)
+
+            Next column
+        Next row
+
+
+
+        For i = 0 To tblDatosPersonas.Rows.Count
+            Dim sentencias As New SqlCommand("Insert into Nombres(Nombre, Apellido1, Apellido2) values(@nom, @ape1, @ape2)", connection)
+            sentencias.Parameters.AddWithValue("@nom", tblDatosPersonas.
+        Next
+
     End Sub
 
 End Class
