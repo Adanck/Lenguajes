@@ -13,9 +13,14 @@ Public Class Form_Desconectado
     Dim adapter As New SqlDataAdapter
     Dim table As New DataTable
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'conn.Open()
         adapter.SelectCommand = New SqlCommand("Select * from Nombres", conn)
+        table.Columns.Add("Nombre")
+        table.Columns.Add("Apellido1")
+        table.Columns.Add("Apellido2")
         adapter.Fill(table)
         reLoad()
+        'conn.Close()
     End Sub
 
     Public Function createInsert() As SqlClient.SqlCommand
@@ -47,13 +52,11 @@ Public Class Form_Desconectado
                 strApellido = vector(1)
                 strApellido2 = vector(2)
             End If
-            'table.Rows.Add(strNombre, strApellido, strApellido2)
+            '            table.Rows.Add(strNombre, strApellido, strApellido2)
             line = fileReader.ReadLine
             adapter.InsertCommand = createInsert()
+            adapter.Update(table)
         Loop
-        adapter.Update(table)
-
-
-
+        
     End Sub
 End Class
