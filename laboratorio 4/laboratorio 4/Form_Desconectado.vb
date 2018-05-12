@@ -39,14 +39,22 @@ Public Class Form_Desconectado
 
         Do While line <> Nothing
             Dim vector = line.Split(" ")
-            If (vector.Length > 3) Then
-                strNombre = vector(0) + " " + vector(1)
-                strApellido = vector(2)
-                strApellido2 = vector(3)
-            Else
+            If (vector.Length = 3) Then
                 strNombre = vector(0)
                 strApellido = vector(1)
                 strApellido2 = vector(2)
+            ElseIf (vector.Length = 4) Then
+                strNombre = vector(0) + " " + vector(1)
+                strApellido = vector(2)
+                strApellido2 = vector(3)
+            ElseIf (vector.Length = 5) Then
+                strNombre = vector(0) + " " + vector(1) + " " + vector(2)
+                strApellido = vector(3)
+                strApellido2 = vector(4)
+            ElseIf (vector.Length = 6) Then
+                strNombre = vector(0) + " " + vector(1) + " " + vector(2) + " " + vector(3)
+                strApellido = vector(4)
+                strApellido2 = vector(5)
             End If
             table.Rows.Add(strNombre, strApellido, strApellido2)
             line = fileReader.ReadLine
