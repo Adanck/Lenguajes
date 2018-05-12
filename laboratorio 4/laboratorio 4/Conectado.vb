@@ -12,15 +12,18 @@ Public Class Conectado
     Private strApellido2 As String
     Private adpAdaptador As SqlDataAdapter
     Private cadena As String = My.Settings.MyConnectio
+    ' Private cadena As String = My.Settings.MyConnectio
 
     Private Sub cargarConectado()
 
         connection.ConnectionString = cadena
+        '  Public Sub cargarConectado()
 
         Dim fileReader As StreamReader
         Dim line As String
         fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\yeric\Downloads\UCR\10 Registros.txt")
         line = fileReader.ReadLine
+        connection.ConnectionString = cadena
 
         tblDatosPersonas.Columns.Add("Nombre")
         tblDatosPersonas.Columns.Add("Apellido1")
@@ -32,20 +35,31 @@ Public Class Conectado
 
         Do While line <> Nothing
             Dim vector = line.Split(" ")
-            If (vector.Length > 3) Then
-                strNombre = vector(0) + " " + vector(1)
-                strApellido1 = vector(2)
-                strApellido2 = vector(3)
-            Else
+            If (vector.Length = 3) Then
                 strNombre = vector(0)
                 strApellido1 = vector(1)
                 strApellido2 = vector(2)
+            ElseIf (vector.Length = 4) Then
+                strNombre = vector(0) + " " + vector(1)
+                strApellido1 = vector(2)
+                strApellido2 = vector(3)
+            ElseIf (vector.Length = 5) Then
+                strNombre = vector(0) + " " + vector(1) + " " + vector(2)
+                strApellido1 = vector(3)
+                strApellido2 = vector(4)
+            ElseIf (vector.Length = 6) Then
+                strNombre = vector(0) + " " + vector(1) + " " + vector(2) + " " + vector(3)
+                strApellido1 = vector(4)
+                strApellido2 = vector(5)
             End If
 
             If connection.State <> ConnectionState.Open Then
                 connection.Open()
             End If
             tblDatosPersonas.Rows.Add(strNombre, strApellido1, strApellido2)
+            tblDatosPersonas.Rows.Add(strNombre, strApellido1, strApellido2)
+            'insert()
+
             line = fileReader.ReadLine
 
             adpAdaptador.InsertCommand = createInsert()
