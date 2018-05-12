@@ -27,7 +27,7 @@ Partial Class Form_Desconectado
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(432, 183)
+        Me.Button1.Location = New System.Drawing.Point(95, 53)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 0
@@ -38,7 +38,7 @@ Partial Class Form_Desconectado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(633, 261)
+        Me.ClientSize = New System.Drawing.Size(257, 261)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form_Desconectado"
         Me.Text = "Form_Desconectado"
