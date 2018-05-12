@@ -58,8 +58,6 @@ Public Class Desconectado
         line = fileReader.ReadLine
 
         adapter.InsertCommand = createInsert()
-
-
     End Sub
 
 End Class
