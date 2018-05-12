@@ -9,7 +9,7 @@ Public Class Conectado
     Private strNombre As String
     Private strApellido1 As String
     Private strApellido2 As String
-    Private cadena As String = My.Settings.MyConnection
+    Private cadena As String = My.Settings.MyConnectio
 
     Public Sub cargarConectado()
         connection.ConnectionString = cadena
@@ -19,9 +19,9 @@ Public Class Conectado
         fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\yeric\Downloads\UCR\50000 Registros.txt")
         line = fileReader.ReadLine
 
-        tblDatosPersonas.Columns.Add("Nombre")
-        tblDatosPersonas.Columns.Add("Apellido1")
-        tblDatosPersonas.Columns.Add("Apellido2")
+        'tblDatosPersonas.Columns.Add("Nombre")
+        'tblDatosPersonas.Columns.Add("Apellido1")
+        'tblDatosPersonas.Columns.Add("Apellido2")
 
 
         Do While line <> Nothing
@@ -44,7 +44,7 @@ Public Class Conectado
                 strApellido2 = vector(5)
             End If
 
-            tblDatosPersonas.Rows.Add(strNombre, strApellido1, strApellido2)
+            ' tblDatosPersonas.Rows.Add(strNombre, strApellido1, strApellido2)
             insert()
             line = fileReader.ReadLine
         Loop
