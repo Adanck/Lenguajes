@@ -15,7 +15,7 @@ Public Class Conectado
 
         Dim fileReader As StreamReader
         Dim line As String
-        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\Adan\Downloads\50000 Registros.txt")
+        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\yeric\Downloads\UCR\50000 Registros.txt")
         line = fileReader.ReadLine
 
         Do While line <> Nothing
@@ -41,6 +41,8 @@ Public Class Conectado
             insert()
             line = fileReader.ReadLine
         Loop
+        MessageBox.Show("Listo")
+
     End Sub
 
     Private Sub insert()

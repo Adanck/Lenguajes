@@ -41,6 +41,7 @@ Public Class ConectadoUna
             line = fileReader.ReadLine
         Loop
         closeConnection()
+        MessageBox.Show("Listo")
     End Sub
 
     Private Sub insert()
