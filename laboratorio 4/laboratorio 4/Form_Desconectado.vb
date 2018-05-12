@@ -18,22 +18,18 @@ Public Class Form_Desconectado
         reLoad()
     End Sub
 
-    Public Function createInsert() As SqlClient.SqlCommand
-
-        Dim cmdInsert As New SqlClient.SqlCommand
-        cmdInsert.Connection = conn
-        cmdInsert.CommandText = "Insert into persona(nombre, Apellido1, Apellido2)" & "values (@nom,@ape1,@ape2)"
-        cmdInsert.Parameters.Add(New SqlClient.SqlParameter("@nom", SqlDbType.NVarChar, 50, "nombre"))
-        cmdInsert.Parameters.Add(New SqlClient.SqlParameter("@ape1", SqlDbType.NVarChar, 50, "Apellido1"))
-        cmdInsert.Parameters.Add(New SqlClient.SqlParameter("@ape2", SqlDbType.NVarChar, 50, "Apellido2"))
-        Return cmdInsert
-
+    Private Function createInsert()
+        Dim cmdinsert As New SqlCommand("INSERT INTO Nombres (Nombre, Apellido1, Apellido2) VALUES (@nom, @ape1, @ape2)", conn)
+        cmdinsert.Parameters.Add(New SqlParameter("@nom", SqlDbType.NVarChar, 20, "Nombre"))
+        cmdinsert.Parameters.Add(New SqlParameter("@ape1", SqlDbType.NVarChar, 100, "Apellido1"))
+        cmdinsert.Parameters.Add(New SqlParameter("@ape2", SqlDbType.NVarChar, 200, "Apellido2"))
+        Return cmdinsert
     End Function
     Private Sub reLoad()
         Dim fileReader As StreamReader
         Dim line As String
 
-        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\Adan\Downloads\10 Registros.txt")
+        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\yeric\Downloads\UCR\10 Registros.txt")
         line = fileReader.ReadLine
 
         Do While line <> Nothing
@@ -47,13 +43,11 @@ Public Class Form_Desconectado
                 strApellido = vector(1)
                 strApellido2 = vector(2)
             End If
-            'table.Rows.Add(strNombre, strApellido, strApellido2)
+            table.Rows.Add(strNombre, strApellido, strApellido2)
             line = fileReader.ReadLine
             adapter.InsertCommand = createInsert()
         Loop
+        adapter.InsertCommand = createInsert()
         adapter.Update(table)
-
-
-
     End Sub
 End Class
