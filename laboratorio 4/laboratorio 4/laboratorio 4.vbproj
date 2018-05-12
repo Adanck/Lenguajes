@@ -73,11 +73,11 @@
   <ItemGroup>
     <Compile Include="Conectado.vb" />
     <Compile Include="Desconectado.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="Interfaz.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Interfaz.Designer.vb">
+      <DependentUpon>Interfaz.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Desconectado.Designer.vb">
@@ -103,8 +103,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Interfaz.resx">
+      <DependentUpon>Interfaz.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Desconectado.resx">
       <DependentUpon>Form_Desconectado.vb</DependentUpon>

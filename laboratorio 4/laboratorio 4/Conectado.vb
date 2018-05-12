@@ -5,7 +5,6 @@ Imports System.Data
 Public Class Conectado
 
     Private connection As New SqlConnection
-    Private tblDatosPersonas As New DataTable
     Private strNombre As String
     Private strApellido1 As String
     Private strApellido2 As String
@@ -18,11 +17,6 @@ Public Class Conectado
         Dim line As String
         fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\yeric\Downloads\UCR\50000 Registros.txt")
         line = fileReader.ReadLine
-
-        'tblDatosPersonas.Columns.Add("Nombre")
-        'tblDatosPersonas.Columns.Add("Apellido1")
-        'tblDatosPersonas.Columns.Add("Apellido2")
-
 
         Do While line <> Nothing
             Dim vector = line.Split(" ")
@@ -44,7 +38,6 @@ Public Class Conectado
                 strApellido2 = vector(5)
             End If
 
-            ' tblDatosPersonas.Rows.Add(strNombre, strApellido1, strApellido2)
             insert()
             line = fileReader.ReadLine
         Loop
