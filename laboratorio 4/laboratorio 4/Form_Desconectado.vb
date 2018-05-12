@@ -10,10 +10,11 @@ Public Class Form_Desconectado
     Dim strApellido2 As String
 
     Dim conn As New SqlConnection(My.Settings.conn)
-    Dim adapter As SqlDataAdapter
+    Dim adapter As New SqlDataAdapter
     Dim table As New DataTable
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        '  table.Columns.Add()
+        reLoad()
     End Sub
 
     Public Function createInsert() As SqlClient.SqlCommand
@@ -31,7 +32,7 @@ Public Class Form_Desconectado
         Dim fileReader As StreamReader
         Dim line As String
 
-        fileReader = My.Computer.FileSystem.OpenTextFileReader("50000 Registros.txt")
+        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\Adan\Downloads\10 Registros.txt")
         line = fileReader.ReadLine
 
         Do While line <> Nothing
@@ -45,6 +46,9 @@ Public Class Form_Desconectado
                 strApellido = vector(1)
                 strApellido2 = vector(2)
             End If
+            'table.Rows.Add(strNombre, strApellido, strApellido2)
+            line = fileReader.ReadLine
+            adapter.InsertCommand = createInsert()
         Loop
 
 

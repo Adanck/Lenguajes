@@ -11,8 +11,8 @@ Public Class Desconectado
         Dim strApellido2 As String
 
         Dim conn As New SqlConnection(My.Settings.conn)
-        Dim adapter As SqlDataAdapter
-        Dim table As New DataTable
+    Dim adapter As New SqlDataAdapter
+    Dim table As New DataTable
     'End Function
     'Private Sub load()
 
