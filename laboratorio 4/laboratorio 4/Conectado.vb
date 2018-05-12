@@ -12,7 +12,7 @@ Public Class Conectado
 
     Private Sub cargarConectado()
 
-        Dim cadena As String = My.Settings.MyConnectio
+        Dim cadena As String = My.Settings.conn
         connection.ConnectionString = cadena
 
 
