@@ -13,8 +13,9 @@ Public Class Form_Desconectado
     Dim adapter As New SqlDataAdapter
     Dim table As New DataTable
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        '  table.Columns.Add()
-        reLoad()
+        adapter.SelectCommand = New SqlCommand("Select * from Nombres", conn)
+        adapter.Fill(table)
+        'reLoad()
     End Sub
 
     Public Function createInsert() As SqlClient.SqlCommand
@@ -50,6 +51,7 @@ Public Class Form_Desconectado
             line = fileReader.ReadLine
             adapter.InsertCommand = createInsert()
         Loop
+        adapter.Update(table)
 
 
 
