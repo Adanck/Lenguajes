@@ -33,6 +33,7 @@ Public Class Form_Desconectado
     Private Sub reLoad()
         Dim fileReader As StreamReader
         Dim line As String
+        Dim time1 As Date = TimeOfDay
 
         fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\Adan\Downloads\10 Registros.txt")
         line = fileReader.ReadLine
@@ -63,5 +64,8 @@ Public Class Form_Desconectado
         Loop
         adapter.InsertCommand = createInsert()
         adapter.Update(table)
+        Dim time2 As Date = TimeOfDay
+
+        MessageBox.Show("Tiempo en segundos" & DateDiff(DateInterval.Second, time2, time1))
     End Sub
 End Class

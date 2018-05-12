@@ -11,6 +11,8 @@ Public Class Conectado
     Private cadena As String = My.Settings.MyConnectio
 
     Public Sub cargarConectado()
+        Dim time As Date = TimeOfDay
+
         connection.ConnectionString = cadena
 
         Dim fileReader As StreamReader
@@ -41,6 +43,9 @@ Public Class Conectado
             insert()
             line = fileReader.ReadLine
         Loop
+        Dim time2 As Date = TimeOfDay
+
+        MessageBox.Show("Tiempo en segundos" & DateDiff(DateInterval.Second, time2, time))
     End Sub
 
     Private Sub insert()
