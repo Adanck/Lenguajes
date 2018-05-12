@@ -4,18 +4,27 @@ Imports System.Data
 
 Public Class Desconectado
 
+    'Public Function loadDesconectado()
+
     Dim strNombre As String
-    Dim strApellido As String
-    Dim strApellido2 As String
+        Dim strApellido As String
+        Dim strApellido2 As String
 
-    Dim conn As New SqlConnection(My.Settings.conn)
-    Dim adapter As SqlDataAdapter
-    Dim table As New DataTable
-
+        Dim conn As New SqlConnection(My.Settings.conn)
+        Dim adapter As SqlDataAdapter
+        Dim table As New DataTable
+    'End Function
     'Private Sub load()
 
     'End Sub
-    Private Function createInsert() As SqlClient.SqlCommand
+    Public Function getAdapter()
+        Return adapter
+    End Function
+
+    Public Function getTBL()
+        Return table
+    End Function
+    Public Function createInsert() As SqlClient.SqlCommand
 
         Dim cmdInsert As New SqlClient.SqlCommand
         cmdInsert.Connection = conn
@@ -45,6 +54,11 @@ Public Class Desconectado
                 strApellido2 = vector(2)
             End If
         Loop
+        table.Rows.Add(strNombre, strApellido, strApellido2)
+        line = fileReader.ReadLine
+
+        adapter.InsertCommand = createInsert()
+
 
     End Sub
 

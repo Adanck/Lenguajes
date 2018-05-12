@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class Form_Desconectado
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -27,21 +27,21 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(355, 182)
+        Me.Button1.Location = New System.Drawing.Point(432, 183)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Conectado"
+        Me.Button1.Text = "Load"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Form1
+        'Form_Desconectado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(498, 261)
+        Me.ClientSize = New System.Drawing.Size(633, 261)
         Me.Controls.Add(Me.Button1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "Form_Desconectado"
+        Me.Text = "Form_Desconectado"
         Me.ResumeLayout(False)
 
     End Sub
