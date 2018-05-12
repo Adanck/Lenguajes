@@ -39,7 +39,7 @@ Public Class Desconectado
         Dim fileReader As StreamReader
         Dim line As String
 
-        fileReader = My.Computer.FileSystem.OpenTextFileReader("50000 Registros.txt")
+        fileReader = My.Computer.FileSystem.OpenTextFileReader("10 Registros.txt")
         line = fileReader.ReadLine
 
         Do While line <> Nothing
