@@ -30,9 +30,21 @@ Public Class Desconectado
         Dim fileReader As StreamReader
         Dim line As String
 
-        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\yeric\Downloads\UCR\50000 Registros.txt")
+        fileReader = My.Computer.FileSystem.OpenTextFileReader("50000 Registros.txt")
         line = fileReader.ReadLine
 
+        Do While line <> Nothing
+            Dim vector = line.Split(" ")
+            If (vector.Length > 3) Then
+                strNombre = vector(0) + " " + vector(1)
+                strApellido = vector(2)
+                strApellido2 = vector(3)
+            Else
+                strNombre = vector(0)
+                strApellido = vector(1)
+                strApellido2 = vector(2)
+            End If
+        Loop
 
     End Sub
 
