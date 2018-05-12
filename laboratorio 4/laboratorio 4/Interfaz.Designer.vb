@@ -24,6 +24,7 @@ Partial Class Interfaz
     Private Sub InitializeComponent()
         Me.btnConectada = New System.Windows.Forms.Button()
         Me.btnDesconectada = New System.Windows.Forms.Button()
+        Me.btnConectadaUna = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnConectada
@@ -37,18 +38,28 @@ Partial Class Interfaz
         '
         'btnDesconectada
         '
-        Me.btnDesconectada.Location = New System.Drawing.Point(209, 77)
+        Me.btnDesconectada.Location = New System.Drawing.Point(209, 79)
         Me.btnDesconectada.Name = "btnDesconectada"
         Me.btnDesconectada.Size = New System.Drawing.Size(75, 23)
         Me.btnDesconectada.TabIndex = 1
         Me.btnDesconectada.Text = "Desconectada"
         Me.btnDesconectada.UseVisualStyleBackColor = True
         '
+        'btnConectadaUna
+        '
+        Me.btnConectadaUna.Location = New System.Drawing.Point(195, 117)
+        Me.btnConectadaUna.Name = "btnConectadaUna"
+        Me.btnConectadaUna.Size = New System.Drawing.Size(105, 23)
+        Me.btnConectadaUna.TabIndex = 2
+        Me.btnConectadaUna.Text = "ConectadaUna"
+        Me.btnConectadaUna.UseVisualStyleBackColor = True
+        '
         'Interfaz
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(498, 261)
+        Me.Controls.Add(Me.btnConectadaUna)
         Me.Controls.Add(Me.btnDesconectada)
         Me.Controls.Add(Me.btnConectada)
         Me.Name = "Interfaz"
@@ -59,4 +70,5 @@ Partial Class Interfaz
 
     Friend WithEvents btnConectada As Button
     Friend WithEvents btnDesconectada As Button
+    Friend WithEvents btnConectadaUna As Button
 End Class

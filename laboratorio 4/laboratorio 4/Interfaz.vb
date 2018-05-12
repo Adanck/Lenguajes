@@ -12,4 +12,9 @@
         frm.Refresh()
         frm.Show()
     End Sub
+
+    Private Sub btnConectadaUna_Click(sender As Object, e As EventArgs) Handles btnConectadaUna.Click
+        Dim classe As New ConectadoUna
+        classe.cargarConectadoUnaVez()
+    End Sub
 End Class
