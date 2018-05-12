@@ -13,7 +13,8 @@ Public Class ConectadoUna
         connection.ConnectionString = cadena
         Dim fileReader As StreamReader
         Dim line As String
-        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\yeric\Downloads\UCR\50000 Registros.txt")
+        Dim time As Date = TimeOfDay
+        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\Adan\Downloads\50000 Registros.txt")
         line = fileReader.ReadLine
 
         openConnection()
@@ -41,7 +42,9 @@ Public Class ConectadoUna
             line = fileReader.ReadLine
         Loop
         closeConnection()
-        MessageBox.Show("Listo")
+        Dim time2 As Date = TimeOfDay
+
+        MessageBox.Show("Tiempo en segundos" & DateDiff(DateInterval.Second, time2, time))
     End Sub
 
     Private Sub insert()
