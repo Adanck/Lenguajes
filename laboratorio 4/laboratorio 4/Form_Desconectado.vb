@@ -35,7 +35,7 @@ Public Class Form_Desconectado
         Dim line As String
         Dim time1 As Date = TimeOfDay
 
-        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\Adan\Downloads\10 Registros.txt")
+        fileReader = My.Computer.FileSystem.OpenTextFileReader("C:\Users\Adan\Downloads\50000 Registros.txt")
         line = fileReader.ReadLine
 
         Do While line <> Nothing
@@ -66,6 +66,6 @@ Public Class Form_Desconectado
         adapter.Update(table)
         Dim time2 As Date = TimeOfDay
 
-        MessageBox.Show("Tiempo en segundos" & DateDiff(DateInterval.Second, time2, time1))
+        MessageBox.Show("Tiempo en segundos == " & DateDiff(DateInterval.Second, time1, time2))
     End Sub
 End Class

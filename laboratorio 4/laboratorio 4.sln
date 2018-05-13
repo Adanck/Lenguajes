@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "laboratorio 4", "laboratorio 4\laboratorio 4.vbproj", "{78E53824-E587-4ADC-A8E3-AA3926F25336}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E9B53F4-049F-43C3-AF07-EA6F93CCC5A1}"
+	ProjectSection(SolutionItems) = preProject
+		50000 Registros.txt = 50000 Registros.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

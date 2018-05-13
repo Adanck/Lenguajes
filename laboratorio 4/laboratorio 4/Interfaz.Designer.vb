@@ -29,29 +29,30 @@ Partial Class Interfaz
         '
         'btnConectada
         '
-        Me.btnConectada.Location = New System.Drawing.Point(209, 35)
+        Me.btnConectada.Location = New System.Drawing.Point(153, 95)
         Me.btnConectada.Name = "btnConectada"
-        Me.btnConectada.Size = New System.Drawing.Size(75, 23)
+        Me.btnConectada.Size = New System.Drawing.Size(158, 23)
         Me.btnConectada.TabIndex = 0
-        Me.btnConectada.Text = "Conectado"
+        Me.btnConectada.Text = "Conectado Ejercicio 3"
+        Me.btnConectada.UseMnemonic = False
         Me.btnConectada.UseVisualStyleBackColor = True
         '
         'btnDesconectada
         '
-        Me.btnDesconectada.Location = New System.Drawing.Point(209, 79)
+        Me.btnDesconectada.Location = New System.Drawing.Point(153, 137)
         Me.btnDesconectada.Name = "btnDesconectada"
-        Me.btnDesconectada.Size = New System.Drawing.Size(75, 23)
+        Me.btnDesconectada.Size = New System.Drawing.Size(158, 23)
         Me.btnDesconectada.TabIndex = 1
-        Me.btnDesconectada.Text = "Desconectada"
+        Me.btnDesconectada.Text = "Desconectada Ejercicio 6"
         Me.btnDesconectada.UseVisualStyleBackColor = True
         '
         'btnConectadaUna
         '
-        Me.btnConectadaUna.Location = New System.Drawing.Point(195, 117)
+        Me.btnConectadaUna.Location = New System.Drawing.Point(153, 52)
         Me.btnConectadaUna.Name = "btnConectadaUna"
-        Me.btnConectadaUna.Size = New System.Drawing.Size(105, 23)
+        Me.btnConectadaUna.Size = New System.Drawing.Size(158, 23)
         Me.btnConectadaUna.TabIndex = 2
-        Me.btnConectadaUna.Text = "ConectadaUna"
+        Me.btnConectadaUna.Text = "Conectada Ejercio 1"
         Me.btnConectadaUna.UseVisualStyleBackColor = True
         '
         'Interfaz
